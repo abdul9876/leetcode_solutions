@@ -9,6 +9,9 @@
  *     }
  * }
  */
+/**
+The method used in this code is called the tourtise and the horse method where the fast and the slow pointers are used and when they meet with each other that tells the loop in the code.
+*/
 public class Solution {
     public boolean hasCycle(ListNode head) {
         
