@@ -30,3 +30,38 @@ class Solution {
     }
 }*/
 
+// optimal soution
+
+
+class Solution {
+    public ListNode reverseLinkedlist(ListNode head){
+        ListNode prev = null;
+        ListNode front = null;
+        while(head!=null){
+            front = head.next;
+            head.next = prev;
+            prev = head;
+            head = front;
+        }
+        return prev;
+    }
+    public boolean isPalindrome(ListNode head) {
+        if(head==null || head.next == null) return true;
+        ListNode slow = head;
+        ListNode fast = head;
+        while(fast.next!=null && fast.next.next!=null){
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+        ListNode newnode = reverseLinkedlist(slow.next);
+        ListNode first = head;
+        ListNode second = newnode;
+        while(second!=null){
+            if(first.val!=second.val) return false;
+            first = first.next;
+            second = second.next;
+        }
+        reverseLinkedlist(newnode);
+        return true;
+    }
+}
