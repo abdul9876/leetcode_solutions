@@ -1,0 +1,14 @@
+class Solution {
+    public long coloredCells(int n) {
+
+   
+ int add = 4;
+    long count =1;
+    while(--n>0){
+        count = count + add;
+         add = add + 4;
+    }
+        return count;
+ 
+    }
+}
