@@ -15,7 +15,7 @@ class Solution {
           ListNode next = head.next; 
         head.next = newnode;
     
-          newnode = head;
+          newnode = head;                         // here the newnode is nothing but the previous node
           head = next;
       
         }
