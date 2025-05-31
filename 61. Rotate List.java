@@ -38,3 +38,41 @@ public ListNode findknode(ListNode temp, int k){
         return head;
     }
 }
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+
+    public ListNode rotateRight(ListNode head, int k) {
+        
+            if(head==null) return null;
+        if(head.next == null||k ==0 ) return head;
+         int count = 1;
+        ListNode temp = head;
+        ListNode tail = head;
+        while(tail.next!=null){
+            count++;
+            tail= tail.next;
+        }
+       
+        if(k%count == 0) return head;
+     k = k%count;
+      tail.next = head;
+    int last = count - k;
+    ListNode newtail = head;
+    for(int i = 1; i<last; i++){
+        newtail = newtail.next;               /// updated code 
+    }
+     head = newtail.next;
+     newtail.next = null;
+    
+        return head;
+    }
+}
