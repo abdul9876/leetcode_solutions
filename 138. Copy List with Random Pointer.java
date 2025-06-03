@@ -16,7 +16,7 @@ class Node {
 class Solution {
     public Node copyRandomList(Node head) {
         Node temp = head;
-        Map<Node, Node> mymap = new HashMap<>();
+        Map<Node, Node> mymap = new HashMap<>();                        // brute force time complexity is O(2N) space complexity O(2n)
         while(temp!=null){
          Node newnode = new Node(temp.val);
          mymap.put(temp,newnode);
